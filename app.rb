@@ -20,8 +20,9 @@ get	'/' do
 	
 end
 
-get '/test' do
-	erb :test
+get '/profile' do
+	@post = Post.all
+	erb :profile
 end
 
 get '/login' do
@@ -31,7 +32,7 @@ end
 get '/logout' do
 	session[:user_id] = nil
 	flash[:notice] = "Logged out!"
-	redirect to '/test'
+	redirect to '/login'
 end
 
 get '/signup' do
@@ -42,7 +43,7 @@ post '/signup' do
 	user = User.create(params[:user]) 
 	session[:user_id] = user.id
 	p user
-	redirect to '/test'
+	redirect to '/profile'
 end
 
 post '/login' do
@@ -50,10 +51,15 @@ post '/login' do
 	if user and user.password == params['password']
 		session[:user_id] = user.id
 		flash[:notice] = "Logged in!"
-		redirect to '/test'
+		redirect to '/profile'
 	else
 		flash[:notice] = "There was a problem logging in!"
 		redirect to '/login'
 	end
+end
+
+post '/newpost' do
+	post = Post.create(params[:post])
+	redirect to '/profile'
 end
 

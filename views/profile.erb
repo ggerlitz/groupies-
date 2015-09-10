@@ -1,0 +1,22 @@
+<div class="new_entry">
+	<form action="/newpost" method="POST">
+		<p>
+			<label for="title">Title</label>
+			<input type="textarea" name="[post]title" required><br>
+		</p>
+		<p>
+			<label for="body">Body</label>
+			<input type="textarea" name="[post]body" required><br>
+		</p>
+		<p>
+			<input type="submit" value="post">
+		</p>
+	</form>
+</div>
+
+<div class="myfeed">
+<h1>Listing Users</h1>
+	<% @posts.each do |post| %>
+	<p><%= post.title %><%= post.body %></p>
+<%end%>
+</div>
