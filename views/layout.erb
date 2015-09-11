@@ -4,9 +4,22 @@
 	<title>Groupies</title>
 </head>
 <body>
-<!-- 	<nav>
-		<a href="/"></a>
-	</nav> -->
+	<header>
+		<nav>
+			<% if current_user %>
+				<a href="/">Groupie Gossip</a>
+				<a href="/profile">Profile</a>
+				<a href="/othergroupies">Other Groupies</a>
+				<a href="/editaccount">Edit Account</a>
+				<a href="/logout">Log out</a>
+				<br>
+				<h1>Hello <%= current_user.username %>!</h1>
+			<% else %>
+				<a href="/signup">Sign Up</a>
+				<a href="/login">Log In</a>
+			<% end %>
+		</nav>
+	</header>
 	<%= flash[:notice] if flash[:notice] %>
 	<%= yield %>
 </body>

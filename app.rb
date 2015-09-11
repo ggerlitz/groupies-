@@ -47,6 +47,7 @@ get'/othergroupies/:id' do
 end
 
 get '/profile' do
+	@user = current_user
 	@posts = current_user.posts
 	erb :profile
 end
@@ -90,7 +91,7 @@ end
 
 get '/unfollow/:id' do
 	@relationship = Relationship.find_by(follower_id: current_user.id,
-											 followed_id: params[:id])
+											 								followed_id: params[:id])
 	@relationship.destroy
 	flash[:notice] = "Unfollowed!"
 	redirect to '/profile'
