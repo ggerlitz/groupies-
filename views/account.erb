@@ -1,5 +1,8 @@
-<%= User.find(current_user).fname %><br>
-<%= User.find(current_user).lname %><br>
-<%= User.find(current_user).username %><br>
-<%= User.find(current_user).email %><br>
-<%= User.find(current_user).bio %><br>
+<h2>Your Account</h2>
+<div class="current_account">
+	<%= User.find(current_user).fname %><br>
+	<%= User.find(current_user).lname %><br>
+	<%= User.find(current_user).username %><br>
+	<%= User.find(current_user).email %><br>
+	<%= User.find(current_user).bio %><br>
+</div>
