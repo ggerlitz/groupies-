@@ -1,12 +1,12 @@
 <h1>Meet Other Groupies</h1>
 <% @users.each do |user| %>
-	<p><a href="/users/<%= user.id %>"><%= user.username %></a>
-	<% if current_user and current_user != user%>
+	<p><a href="/fellowgroupie/<%= user.id %>"><%= user.username %></a> 
+	<% if current_user and current_user != user %>
 		<% if current_user and !current_user.following.include?(user) %>
 			(<a href="/follow/<%= user.id %>">Follow</a>)
-			<% else %> 
+		<% else %>
 			(<a href="/unfollow/<%= user.id %>">Unfollow</a>)
 		<% end %>
-	<%end%>
+	<% end %>
 	</p>
-<%end%>
+<% end %>

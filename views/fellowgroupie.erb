@@ -1,8 +1,9 @@
-<div class="fellowgroupie_feed">
-	<h1><%= user.id %></h1>
-		<% @posts.each do |post| %>
-		<p><%= post.title %></p>
-		<p><%= post.body %></p>
-		<hr>
-	<%end%>
-</div>
+<h1><%= @user.username %></h1>
+<h3><%= @user.bio %></h3>
+
+<h3>Following</h3>
+<ol>
+<% @user.following.each do |user| %>
+	<li><%= user.username %></li>
+<% end %>
+</ol>

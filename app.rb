@@ -17,13 +17,18 @@ def current_user
 end
 
 get	'/' do 
-	
+	@posts = Post.last(10).reverse
+	erb :newsfeed
 end
 
-get '/fellowgroupie' do
-	current = User.find(params[:id])
-	@posts = current.posts
-	erb :fellowgroupie
+get '/fellowgroupie/:id' do
+	begin
+		@user = User.find(params[:id])
+		erb :fellowgroupie
+	rescue
+		flash[:notice] = "That user does not exist."
+		redirect to '/'
+	end
 end
 
 get '/othergroupies' do
@@ -76,9 +81,20 @@ post '/editaccount' do
 	redirect to '/account'
 end
 
-# get '/delete' do
-# 	erb :delete
-# end
+get '/follow/:id' do
+	@relationship = Relationship.create(follower_id: current_user.id, 
+																			followed_id: params[:id])
+	flash[:notice] = "Followed!"
+	redirect to '/profile'
+end
+
+get '/unfollow/:id' do
+	@relationship = Relationship.find_by(follower_id: current_user.id,
+											 followed_id: params[:id])
+	@relationship.destroy
+	flash[:notice] = "Unfollowed!"
+	redirect to '/profile'
+end
 
 post '/delete' do
 	current_user.destroy
