@@ -22,3 +22,10 @@
 	<hr>
 <%end%>
 </div>
+
+<h3>Following</h3>
+<ol>
+<% @user.following.each do |user| %>
+	<li><%= user.username %></li>
+<% end %>
+</ol>
