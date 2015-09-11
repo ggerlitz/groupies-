@@ -21,7 +21,7 @@ get	'/' do
 end
 
 get '/profile' do
-	@post = Post.all
+	@posts = Post.all
 	erb :profile
 end
 
