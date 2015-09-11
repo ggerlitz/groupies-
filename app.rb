@@ -20,8 +20,29 @@ get	'/' do
 	
 end
 
+get '/fellowgroupie' do
+	current = User.find(params[:id])
+	@posts = current.posts
+	erb :fellowgroupie
+end
+
+get '/othergroupies' do
+	@users = User.all
+	erb :othergroupies
+end
+
+get'/othergroupies/:id' do
+	begin
+		@user = User.find(params[:id])
+		erb :othergroupies
+	rescue
+		flash[:notice] = "That user does not exist."
+		redirect to '/'
+	end
+end
+
 get '/profile' do
-	@posts = Post.all
+	@posts = current_user.posts
 	erb :profile
 end
 
@@ -37,6 +58,35 @@ end
 
 get '/signup' do
 	erb :signup
+end
+
+get '/account' do
+	erb :account
+end
+
+get '/editaccount' do
+	@user = current_user
+	erb :editaccount
+end
+
+post '/editaccount' do
+	@user = current_user
+	current_user.update(params[:user])
+	flash[:notice] = "Profile was successfully updated."
+	redirect to '/account'
+end
+
+# get '/delete' do
+# 	erb :delete
+# end
+
+post '/delete' do
+	current_user.destroy
+	redirect to '/finethen'
+end
+
+get '/finethen' do
+	erb :finethen
 end
 
 post '/signup' do 
@@ -59,7 +109,12 @@ post '/login' do
 end
 
 post '/newpost' do
-	post = Post.create(params[:post])
+	user = current_user
+	post = Post.new(params[:post])
+	post.user_id = current_user.id
+	post.save
+
+	p post
 	redirect to '/profile'
 end
 
