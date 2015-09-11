@@ -2,11 +2,11 @@
 	<form action="/newpost" method="POST">
 		<p>
 			<label for="title">Title</label>
-			<input type="textarea" name="[post]title" required><br>
+			<input type="text" name="[post]title" required><br>
 		</p>
 		<p>
-			<label for="body">Body</label>
-			<input type="textarea" name="[post]body" required><br>
+			<label for="body">Body</label><br>
+			<textarea rows="20" cols="50" maxlength="150" name="[post]body" required></textarea><br>
 		</p>
 		<p>
 			<input type="submit" value="post">
