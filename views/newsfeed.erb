@@ -1,24 +1,38 @@
 <div class="new_entry">
-	<form action="/newpost" method="POST">
+	<form action="/newpost" method="POST" enctype="multipart/form-data">
+<!--     <p>
+    	<input type="file" name="file">
+    </p>	 -->
 		<p>
-			<input type="textarea" name="newpost" required><br>
+			<label for="title">Header</label><br>
+			<input type="text" name="[post]title" required><br>
 		</p>
+
+		<p>
+			<label for="body">Status</label><br>
+			<textarea rows="20" cols="50" maxlength="150" name="[post]body" required></textarea><br>
+		</p>
+
 		<p>
 			<input type="submit" value="post">
 		</p>
+
 	</form>
 </div>
 
-<div class="feed">
-	<p><%=    %></p>
-
-</div>
-
 <div class="thefeed">
-<h1>Groupies love to gossip!</h1>
-	<% @posts.each do |post| %>
-	<p><%= post.title %></p>
-	<p><%= post.body %></p>
-	<hr>
-<%end%>
+	<h1>Groupies love to gossip!</h1>
+		<% @posts.each do |post| %>
+			<div id="postcontainer">
+				<div id="imgcontainer">
+					<img src="http://dev1.myshh.net/framework/hostedFiles/no_image_avail.png">
+					<!-- <img src="../microblog/public/<%= @filename %>/"> -->
+				</div>
+
+				<div id="textcontainer">
+					<p><%= post.title %></p>
+					<p><%= post.body %></p>
+				</div>
+			</div>
+		<%end%>
 </div>

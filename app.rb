@@ -16,7 +16,11 @@ def current_user
 	end
 end
 
-get	'/' do 
+get '/' do
+	erb :welcome
+end	
+
+get	'/gossip' do 
 	@posts = Post.last(10).reverse
 	erb :newsfeed
 end
@@ -42,7 +46,7 @@ get'/othergroupies/:id' do
 		erb :othergroupies
 	rescue
 		flash[:notice] = "That user does not exist."
-		redirect to '/'
+		redirect to '/othergroupies'
 	end
 end
 
@@ -130,8 +134,14 @@ post '/newpost' do
 	post = Post.new(params[:post])
 	post.user_id = current_user.id
 	post.save
-
+ #  @filename = params[:file][:filename]
+ #  file = params[:file][:tempfile]
+ #  File.open("./public/#{@filename}", 'wb') do |f|
+ #    f.write(file.read)
+ #  end
+ #  flash[:notice] = "Successfully uploaded!"
 	p post
-	redirect to '/profile'
+	redirect to '/gossip'
 end
+
 

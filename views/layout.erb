@@ -2,15 +2,16 @@
 <html>
 <head>
 	<title>Groupies</title>
+	<link rel="stylesheet" type="text/css" href="gerlitz_stylesheet.css">
+	<link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
 </head>
 <body>
 	<header>
 		<nav>
 			<% if current_user %>
-				<a href="/">Groupie Gossip</a>
-				<a href="/profile">Profile</a>
-				<a href="/othergroupies">Other Groupies</a>
-				<a href="/editaccount">Edit Account</a>
+				<a href="/">Gossip</a>
+				<a href="/othergroupies">Groupies</a>
+				<a href="/profile">My Profile</a>
 				<a href="/logout">Log out</a>
 				<br>
 				<h1>Hello <%= current_user.username %>!</h1>
