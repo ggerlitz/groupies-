@@ -2,20 +2,21 @@
 <html>
 <head>
 	<title>Groupies</title>
+	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="gerlitz_stylesheet.css">
-	<link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Rock+Salt|Exo:400italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
 	<header>
 		<nav>
 			<% if current_user %>
-				<a href="/">Gossip</a>
+				<a href="/">Home</a>
+				<a href="/gossip">Gossip</a>
 				<a href="/othergroupies">Groupies</a>
-				<a href="/profile">My Profile</a>
+				<a href="/profile">My Confessions</a>
 				<a href="/logout">Log out</a>
-				<br>
-				<h1>Hello <%= current_user.username %>!</h1>
 			<% else %>
+				<a href="/">Home</a>
 				<a href="/signup">Sign Up</a>
 				<a href="/login">Log In</a>
 			<% end %>

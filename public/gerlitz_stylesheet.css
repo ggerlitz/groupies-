@@ -12,20 +12,35 @@ h1, nav {
 	color: white;
 }
 
+#flash {
+	color: red;
+}
+
+p {
+	font-family: 'Exo', sans-serif;
+	color: white;
+	font-size: 20px;
+}
+
 nav a {
 	text-decoration: none;
 	text-align: center;
 	margin: 2em;
 	margin-bottom: 0;
 	display: inline-block;
-	/*border:1px solid white;*/
+	font-weight: bold;
+	font-size: 20px;
 }
 
-.thefeed {
-	float: left;
+.welcome {
+	text-align: center;
+	background-color: rgba(89, 87, 89, 0.4);
+}
+
+.gossip {
 	width: 100%;
+	margin: 30px;
 	padding: 10px;
-	/*border: 1px solid red;*/
 }
 
 #postcontainer {
@@ -34,65 +49,72 @@ nav a {
 	height: 350px;
 	margin-left: 50px;
 	margin-top: 60px;
-	border: 1px solid black;
+	background-color: rgba(89, 87, 89, 0.4);
 }
 
-#imgcontainer {
+#postimage {
 	width: 100%;
-	height: 60%;
-	/*border: 1px solid green;*/
+	height: 50%;
 }
 
-#imgcontainer img {
+#postimage img {
 	width: 100%;
 	height: 100%;
 }
 
-#textcontainer {
+#posttext {
 	width: 100%;
-	height: 40%;
-	/*border: 1px solid red;*/
+	height: 50%;
 }
 
-	#nav
-	{
-		position: absolute;
-		right: 0em;
-		top: 2.2em;
-	}
+#title {
+	text-align: left;
+	font-style: italic;
+	font-size: 20px;
+	padding: 15px; 
+	margin: 0;
+}
 
-		#nav > ul > li
-		{
-			float: left;
-		}
-		
-			#nav > ul > li:last-child
-			{
-				padding-right: 0;
-			}
+#body {
+	width: 85%;
+	margin: 0 auto;
+	font-size: 16px;
+	padding: 5px;
+	border: 1px solid gray;
+}
 
-			#nav > ul > li > a,
-			#nav > ul > li > span
-			{
-				display: block;
-				margin-left: 0.7em;
-				padding: 0.80em 1.2em;
-				letter-spacing: 0.06em;
-				text-decoration: none;
-				text-transform: uppercase;
-				font-size: 1.1em;
-				outline: 0;
-				color: #333;
-			}
+.allgroupies a {
+	text-decoration: none;
+	color: white;
+}
 
-			#nav li.active a
-			{
-				background: #e95d3c;
-				border-radius: 5px;
-				color: #FFF;
-			}
+.allgroupies {
+	width: 100%
+}
 
-			#nav > ul > li > ul
-			{
-				display: none;
-			}
+.onegroupie {
+	float:left;
+	width: 45%;
+	margin: 20px;
+	margin-left: 25%;
+	border:1px solid white;
+	padding: 15px;
+	text-align: center;
+}
+
+.groupiephoto {
+	float: left;
+	width: 30%;
+	margin: 20px
+}
+
+.groupiephoto img {
+	width: 100px;
+	height: 100px;
+}
+
+.groupieinfo {
+	float: left;
+	width: 60%;
+}
+

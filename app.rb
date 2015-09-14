@@ -21,6 +21,7 @@ get '/' do
 end	
 
 get	'/gossip' do 
+	# @user = User.find(params[:id]).username
 	@posts = Post.last(10).reverse
 	erb :newsfeed
 end
@@ -63,7 +64,7 @@ end
 get '/logout' do
 	session[:user_id] = nil
 	flash[:notice] = "Logged out!"
-	redirect to '/login'
+	redirect to '/'
 end
 
 get '/signup' do
@@ -89,16 +90,16 @@ end
 get '/follow/:id' do
 	@relationship = Relationship.create(follower_id: current_user.id, 
 																			followed_id: params[:id])
-	flash[:notice] = "Followed!"
-	redirect to '/profile'
+	redirect to '/othergroupies'
+	flash[:notice] = "Followed!"	
 end
 
 get '/unfollow/:id' do
 	@relationship = Relationship.find_by(follower_id: current_user.id,
 											 								followed_id: params[:id])
 	@relationship.destroy
+	redirect to '/othergroupies'
 	flash[:notice] = "Unfollowed!"
-	redirect to '/profile'
 end
 
 post '/delete' do
