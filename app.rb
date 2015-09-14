@@ -29,6 +29,7 @@ end
 get '/fellowgroupie/:id' do
 	begin
 		@user = User.find(params[:id])
+		@posts = @user.posts.reverse
 		erb :fellowgroupie
 	rescue
 		flash[:notice] = "That user does not exist."

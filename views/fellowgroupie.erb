@@ -1,9 +1,45 @@
-<h1><%= @user.username %></h1>
-<h3><%= @user.bio %></h3>
+<div class="left">
+	<div class="aboutme">
+		<h1><%= @user.username %></h1>
+				<img src="http://socialmediapearls.com/wp-content/uploads/2014/11/ig-no-profile-pic.jpg">
+				<p>
+					Name: <%= @user.fname %> <%= @user.lname %>
+				</p>
 
-<h3>Following</h3>
-<ol>
-<% @user.following.each do |user| %>
-	<li><%= user.username %></li>
-<% end %>
-</ol>
+				<p>
+					Username: <%= @user.username %>
+				</p>
+
+				<p>
+					Email: <%= @user.email %>
+				</p>
+
+				<p>
+					Bio: <%= @user.bio %>
+				</p>
+	</div>
+
+	<div class="friends">
+		<h1>Following</h1>
+		<ol>
+			<% @user.following.each do |user| %>
+				<li><a href="/fellowgroupie/<%= user.id %>">@<%= user.username %></a></li>
+			<% end %>
+		</ol>
+	</div>
+</div>
+
+<div class="main">
+	<h1>My Confessions</h1>
+		<% @posts.each do |post| %>
+			<div class="myposts">
+				<div class="mypostimage">
+					<img src="http://dev1.myshh.net/framework/hostedFiles/no_image_avail.png">
+				</div>
+				<div class="myposttext">
+					<p><%= post.title %></p>
+					<p><%= post.body %></p>
+				</div>
+			</div>
+		<%end%>
+</div>

@@ -13,6 +13,9 @@ h1, h2, nav {
 	color: white;
 }
 
+h1:hover {
+	font-size: 55px;
+}
 
 p {
 	font-family: 'Exo', sans-serif;
@@ -28,7 +31,21 @@ nav a {
 	display: inline-block;
 	font-weight: bold;
 	font-size: 20px;
+	color: white;
 }
+
+a:hover {
+    color: #0DFFF8;
+}
+
+/*a:visited {
+    color: #99FF33;
+}*/
+
+a:active {
+    color: #410CE8;
+}
+
 
 /*welcome page styling*/
 .welcome {
@@ -86,6 +103,14 @@ nav a {
 .allgroupies a {
 	text-decoration: none;
 	color: white;
+}
+
+.allgroupies a:hover {
+    color: #0DFFF8;
+}
+
+.allgroupies a:active {
+    color: #410CE8;
 }
 
 .allgroupies {
@@ -202,6 +227,14 @@ nav a {
 	color: white;
 }
 
+.friends a:hover, .aboutme a:hover {
+  color: #0DFFF8;
+}
+
+.friends a:active, .aboutme a:active {
+  color: #410CE8;
+}
+
 #editaccount a {
 	color: black;
 	font-weight: bold;
@@ -242,4 +275,8 @@ input[type="submit"]{
 .goodbye img {
 	width: 100%;
 	margin:0 auto;
+}
+
+.goodbye h1:hover {
+	color: #FF0000;
 }
