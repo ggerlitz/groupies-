@@ -108,6 +108,8 @@ post '/delete' do
 end
 
 get '/finethen' do
+	session[:user_id] = nil
+	flash[:notice] = "Account Deleted and Added To Our Blacklist"
 	erb :finethen
 end
 
