@@ -118,19 +118,42 @@ nav a {
 	width: 60%;
 }
 
+.main {
+	float: right;
+	width: 65%;
+}
+
+.main h1 {
+	text-align: center;
+}
+
 .left {
 	float: left;
 	width: 30%;
+	margin: 20px;	
+}
+
+.aboutme {
+	width: 100%;
 	margin: 20px;
-	background-color: rgba(89, 87, 89, 0.4);	
-	/*border: 1px solid yellow;*/
+	padding: 20px;
+	background-color: rgba(89, 87, 89, 0.4);
+}
+
+.aboutme
+
+.left ol, .left li{
+	width: 70%;
+	font-family: 'Exo', sans-serif;
+	color: white;
+	font-size: 20px;
 }
 
 .new_entry {
 	width: 100%;
-	margin: 0 auto;
+	margin: 20px;
 	padding: 20px;
-	/*border: 1px solid red;*/
+	background-color: rgba(89, 87, 89, 0.4);
 }
 
 .greeting {
@@ -139,50 +162,39 @@ nav a {
 	text-align: center;
 }
 
-.center {
-	float: right;
-	width: 65%;
-	/*background-color: rgba(89, 87, 89, 0.4);*/
-	/*margin-left: 20%;*/
-}
-
-.right {
-	float: left;
-	width: 30%;
-	margin: 20px;
-	height: 600px;
-	background-color: rgba(89, 87, 89, 0.4);
-	/*margin: 0 auto;*/
-}
-
-.center h1, .right h1 {
-	margin-left: 0;
-	text-align: center;
-	z-index: 1;
-}
-
 .myposts {
-	/*float: left;*/
+	float: left;
 	width: 100%;
-	background-color: rgba(89, 87, 89, 0.4);
 	margin: 20px;
 	padding: 20px;
+	background-color: rgba(89, 87, 89, 0.4);
 }
 
-.myposts img {
-	height: 100px;
-	margin: 0 50px;
+.mypostimage {
+	float: left;
+	width: 40%;
+	margin: 20px;
 }
 
-.right ol, .right li{
-	width: 70%;
-	font-family: 'Exo', sans-serif;
-	color: white;
-	font-size: 20px;
+.myposttext {
+	float: left;
+	width: 40%;
+	margin: 20px;
+}
+
+.mypostimage img {
+	width: 300px;
+	height: 300px;
 }
 
 .friends {
 	width: 100%;
-	margin: 0 auto;
+	margin: 20px;
 	padding: 20px;
+	background-color: rgba(89, 87, 89, 0.4);
+}
+
+.friends a {
+	text-decoration: none;
+	color: white;
 }
