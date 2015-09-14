@@ -7,7 +7,7 @@ header{
 	background-color: black;
 }
 
-h1, nav {
+h1, h2, nav {
 	font-family: 'Rock Salt', cursive;
 	color: white;
 }
@@ -43,7 +43,7 @@ nav a {
 	padding: 10px;
 }
 
-#postcontainer {
+.postcontainer {
 	float: left;
 	width: 350px;
 	height: 350px;
@@ -52,17 +52,17 @@ nav a {
 	background-color: rgba(89, 87, 89, 0.4);
 }
 
-#postimage {
+.postimage {
 	width: 100%;
 	height: 50%;
 }
 
-#postimage img {
+.postimage img {
 	width: 100%;
 	height: 100%;
 }
 
-#posttext {
+.posttext {
 	width: 100%;
 	height: 50%;
 }
@@ -118,3 +118,71 @@ nav a {
 	width: 60%;
 }
 
+.left {
+	float: left;
+	width: 30%;
+	margin: 20px;
+	background-color: rgba(89, 87, 89, 0.4);	
+	/*border: 1px solid yellow;*/
+}
+
+.new_entry {
+	width: 100%;
+	margin: 0 auto;
+	padding: 20px;
+	/*border: 1px solid red;*/
+}
+
+.greeting {
+	width: 100%;
+	margin: 20px;
+	text-align: center;
+}
+
+.center {
+	float: right;
+	width: 65%;
+	/*background-color: rgba(89, 87, 89, 0.4);*/
+	/*margin-left: 20%;*/
+}
+
+.right {
+	float: left;
+	width: 30%;
+	margin: 20px;
+	height: 600px;
+	background-color: rgba(89, 87, 89, 0.4);
+	/*margin: 0 auto;*/
+}
+
+.center h1, .right h1 {
+	margin-left: 0;
+	text-align: center;
+	z-index: 1;
+}
+
+.myposts {
+	/*float: left;*/
+	width: 100%;
+	background-color: rgba(89, 87, 89, 0.4);
+	margin: 20px;
+	padding: 20px;
+}
+
+.myposts img {
+	height: 100px;
+	margin: 0 50px;
+}
+
+.right ol, .right li{
+	width: 70%;
+	font-family: 'Exo', sans-serif;
+	color: white;
+	font-size: 20px;
+}
+
+.friends {
+	width: 100%;
+	margin: 0 auto;
+	padding: 20px;
+}

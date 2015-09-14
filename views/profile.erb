@@ -1,32 +1,48 @@
-<h1>Hello <%= current_user.username %>!</h1>
-<div class="new_entry">
-	<form action="/newpost" method="POST">
-		<p>
-			<label for="title">Title</label>
-			<input type="text" name="[post]title" required><br>
-		</p>
-		<p>
-			<label for="body">Body</label><br>
-			<textarea rows="20" cols="50" maxlength="150" name="[post]body" required></textarea><br>
-		</p>
-		<p>
-			<input type="submit" value="post">
-		</p>
-	</form>
+<div class="greeting">
+	<h1>Hello <%= current_user.fname %>!</h1>
+</div>
+<div class="left">
+	<div class="new_entry">
+		<h2>New Confession</h2>
+		<form action="/newpost" method="POST">
+			<p>
+				<label for="title">Title</label>
+				<input type="text" name="[post]title" required><br>
+			</p>
+			<p>
+				<label for="body">Body</label><br>
+				<textarea rows="20" cols="50" maxlength="150" name="[post]body" required></textarea><br>
+			</p>
+			<p>
+				<input type="submit" value="post">
+			</p>
+		</form>
+	</div>
 </div>
 
-<div class="myfeed">
+<div class="center">
 	<h1>My Posts</h1>
 		<% @posts.each do |post| %>
-			<p><%= post.title %></p>
-			<p><%= post.body %></p>
-			<hr>
+			<div class="myposts">
+				<div id="mypostimage">
+					<img src="http://dev1.myshh.net/framework/hostedFiles/no_image_avail.png">
+					<!-- <img src="../microblog/public/<%= @filename %>/"> -->
+				</div>
+				<div class="myposttext">
+					<p><%= post.title %></p>
+					<p><%= post.body %></p>
+				</div>
+			</div>
 		<%end%>
 </div>
 
-<h3>Following</h3>
-<ol>
-<% @user.following.each do |user| %>
-	<li><%= user.username %></li>
-<% end %>
-</ol>
+<div class="right">
+		<h1>Following</h1>
+		<div class="friends">
+			<ol>
+				<% @user.following.each do |user| %>
+					<li><a href="/fellowgroupie/<%= user.id %>">@<%= user.username %></a></li>
+				<% end %>
+			</ol>
+		</div>
+</div>

@@ -23,13 +23,13 @@
 <div class="gossip">
 	<h1>Groupies love to gossip!</h1>
 		<% @posts.each do |post| %>
-			<div id="postcontainer">
-				<div id="postimage">
+			<div class="postcontainer">
+				<div class="postimage">
 					<img src="http://dev1.myshh.net/framework/hostedFiles/no_image_avail.png">
 					<!-- <img src="../microblog/public/<%= @filename %>/"> -->
 				</div>
 
-				<div id="posttext">
+				<div class="posttext">
 					<!-- <p id="userinfo"><%= @user %></p> -->
 					<p id="title"><%= post.title %></p>
 					<p id="body"><%= post.body %></p>

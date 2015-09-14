@@ -53,7 +53,7 @@ end
 
 get '/profile' do
 	@user = current_user
-	@posts = current_user.posts
+	@posts = current_user.posts.reverse
 	erb :profile
 end
 
