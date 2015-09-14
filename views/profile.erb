@@ -5,6 +5,9 @@
 <div class="left">
 	<div class="aboutme">
 		<h1>About Me</h1>
+
+				<img src="http://socialmediapearls.com/wp-content/uploads/2014/11/ig-no-profile-pic.jpg">
+
 				<p>
 					Name: <%= User.find(current_user).fname %> <%= User.find(current_user).lname %>
 				</p>
@@ -20,6 +23,11 @@
 				<p>
 					Bio: <%= User.find(current_user).bio %>
 				</p>
+
+				<button type="button" id="editaccount">
+					<a href="/editaccount">Edit My Account</a>
+				</button>
+					
 	</div>
 
 	<div class="new_entry">

@@ -1,3 +1,4 @@
+/*general styling*/
 html { 
   background: url(/empty_stage.jpg) no-repeat center center fixed; 
   background-size: cover;
@@ -12,9 +13,6 @@ h1, h2, nav {
 	color: white;
 }
 
-#flash {
-	color: red;
-}
 
 p {
 	font-family: 'Exo', sans-serif;
@@ -32,11 +30,13 @@ nav a {
 	font-size: 20px;
 }
 
+/*welcome page styling*/
 .welcome {
 	text-align: center;
 	background-color: rgba(89, 87, 89, 0.4);
 }
 
+/*newsfeed styling*/
 .gossip {
 	width: 100%;
 	margin: 30px;
@@ -118,9 +118,12 @@ nav a {
 	width: 60%;
 }
 
+/*User Profile Styling*/
+
 .main {
-	float: right;
-	width: 65%;
+	float: left;
+	width: 60%;
+	margin: 45px;
 }
 
 .main h1 {
@@ -194,7 +197,44 @@ nav a {
 	background-color: rgba(89, 87, 89, 0.4);
 }
 
-.friends a {
+.friends a, .aboutme a {
 	text-decoration: none;
 	color: white;
+}
+
+#editaccount a {
+	color: black;
+	font-weight: bold;
+	font-size: 16px;
+	font-family: 'Exo', sans-serif;
+}
+
+/*Edit Account Styling*/
+.editdetails h1, .deleteaccount h1 {
+	text-align: center
+}
+
+.editdetails, .deleteaccount {
+	float: left;
+	width: 550px;
+	height: 500px;
+	margin: 40px;
+	
+	padding: 20px;
+	background-color: rgba(89, 87, 89, 0.4);
+}
+
+.editdetails {
+	margin-left: 80px;
+}
+
+.deleteaccount form {
+	text-align: center;
+}
+
+input[type="submit"]{
+  height:25px;
+	font-size: 16px;
+	border-radius: 5px;
+	font-family: 'Exo', sans-serif;
 }

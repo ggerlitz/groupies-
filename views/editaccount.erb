@@ -1,33 +1,36 @@
-<form action="/editaccount" method="POST">
-	<h1>Edit Profile</h1>
-	<p>
-		<label for="fname">First Name</label>
-		<input type="text" name="[user]fname" value="<%= @user.fname%>" >
-	</p>
-	<p>
-		<label for="name">Last Name</label>
-		<input type="text" name="[user]lname" value="<%= @user.lname%>" >
-	</p>
+<div class="editdetails">
+	<form action="/edit" method="POST">
+		<h1>Edit Profile</h1>
 		<p>
-		<label for="username">Username</label>
-		<input type="text" name="[user]username" value="<%= @user.username%>">
-	</p>
-	</p>
+			<label for="fname">First Name</label>
+			<input type="text" name="[user]fname" value="<%= @user.fname%>" >
+		</p>
 		<p>
-		<label for="email">Email Address</label>
-		<input type="email" name="[user]email" value="<%= @user.email%>">
-	</p>
-	</p>
-		<p>
-		<label for="bio">Bio</label>
-		<input type="textarea" rows="20" cols="100" name="[user]bio" value="<%= @user.bio%>">
-	</p>
-		<input type="submit" value="Update">
-</form>	
+			<label for="name">Last Name</label>
+			<input type="text" name="[user]lname" value="<%= @user.lname%>" >
+		</p>
+			<p>
+			<label for="username">Username</label>
+			<input type="text" name="[user]username" value="<%= @user.username%>">
+		</p>
+		</p>
+			<p>
+			<label for="email">Email Address</label>
+			<input type="email" name="[user]email" value="<%= @user.email%>">
+		</p>
+		</p>
+			<p>
+			<label for="bio">Bio</label>
+			<input type="textarea" rows="20" cols="100" name="[user]bio" value="<%= @user.bio%>">
+		</p>
+			<input type="submit" value="Update">
+	</form>	
+</div>
 
-<br>
-<hr>
-
-<form action="/delete" method="POST">
-	<input type="submit" value="Delete my account...FOREVER">
-</form>
+<div class="deleteaccount">
+	<h1>Delete Your Account</h1>
+	<form action="/delete" method="POST">
+		<img src="mail_delete.png">
+		<input type="submit" value="Delete my account...FOREVER">
+	</form>
+</div>
