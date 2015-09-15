@@ -1,31 +1,77 @@
-<div class="new_entry">
-	<form action="/newpost" method="POST">
-		<p>
-			<label for="title">Title</label>
-			<input type="text" name="[post]title" required><br>
-		</p>
-		<p>
-			<label for="body">Body</label><br>
-			<textarea rows="20" cols="50" maxlength="150" name="[post]body" required></textarea><br>
-		</p>
-		<p>
-			<input type="submit" value="post">
-		</p>
-	</form>
+<div class="greeting">
+	<h1>Hello <%= current_user.fname %>!</h1>
 </div>
 
-<div class="myfeed">
-<h1>My Posts</h1>
-	<% @posts.each do |post| %>
-	<p><%= post.title %></p>
-	<p><%= post.body %></p>
-	<hr>
-<%end%>
+<div class="left">
+	<div class="aboutme">
+		<h1>About Me</h1>
+
+				<img src="http://socialmediapearls.com/wp-content/uploads/2014/11/ig-no-profile-pic.jpg">
+
+				<p>
+					Name: <%= User.find(current_user).fname %> <%= User.find(current_user).lname %>
+				</p>
+
+				<p>
+					Username: <%= User.find(current_user).username %>
+				</p>
+
+				<p>
+					Email: <%= User.find(current_user).email %>
+				</p>
+
+				<p>
+					Bio: <%= User.find(current_user).bio %>
+				</p>
+
+				<button type="button" id="editaccount">
+					<a href="/editaccount">Edit My Account</a>
+				</button>
+					
+	</div>
+
+	<div class="new_entry">
+		<h1>New Confession</h1>
+		<form action="/newpost" method="POST" enctype="multipart/form-data">
+	    <p>
+	    	<label for="images">Upload Photos</label><br>
+	    	<input type="file" name="file">
+	    </p>	
+			<p>
+				<label for="title">Title</label><br>
+				<input type="text" name="[post]title" required>
+			</p>
+			<p>
+				<label for="body">Body</label><br>
+				<textarea rows="20" cols="50" maxlength="150" name="[post]body" required></textarea><br>
+			</p>
+			<p>
+				<input type="submit" value="post">
+			</p>
+		</form>
+	</div>
+
+	<div class="friends">
+		<h1>Following</h1>
+		<ol>
+			<% @user.following.each do |user| %>
+				<li><a href="/fellowgroupie/<%= user.id %>">@<%= user.username %></a></li>
+			<% end %>
+		</ol>
+	</div>
 </div>
 
-<h3>Following</h3>
-<ol>
-<% @user.following.each do |user| %>
-	<li><%= user.username %></li>
-<% end %>
-</ol>
+<div class="main">
+	<h1>My Confessions</h1>
+		<% @posts.each do |post| %>
+			<div class="myposts">
+				<div class="mypostimage">
+					<img src="http://dev1.myshh.net/framework/hostedFiles/no_image_avail.png">
+				</div>
+				<div class="myposttext">
+					<p><%= post.title %></p>
+					<p><%= post.body %></p>
+				</div>
+			</div>
+		<%end%>
+</div>

@@ -2,11 +2,26 @@
 <html>
 <head>
 	<title>Groupies</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="gerlitz_stylesheet.css">
+	<link href='https://fonts.googleapis.com/css?family=Rock+Salt|Exo:400italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<!-- 	<nav>
-		<a href="/"></a>
-	</nav> -->
+	<header>
+		<nav>
+			<% if current_user %>
+				<a href="/">Home</a>
+				<a href="/gossip">Gossip</a>
+				<a href="/othergroupies">Groupies</a>
+				<a href="/profile">My Confessions</a>
+				<a href="/logout">Log out</a>
+			<% else %>
+				<a href="/">Home</a>
+				<a href="/signup">Sign Up</a>
+				<a href="/login">Log In</a>
+			<% end %>
+		</nav>
+	</header>
 	<%= flash[:notice] if flash[:notice] %>
 	<%= yield %>
 </body>

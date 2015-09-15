@@ -1,0 +1,282 @@
+/*general styling*/
+html { 
+  background: url(/empty_stage.jpg) no-repeat center center fixed; 
+  background-size: cover;
+}
+
+header{
+	background-color: black;
+}
+
+h1, h2, nav {
+	font-family: 'Rock Salt', cursive;
+	color: white;
+}
+
+h1:hover {
+	font-size: 55px;
+}
+
+p {
+	font-family: 'Exo', sans-serif;
+	color: white;
+	font-size: 20px;
+}
+
+nav a {
+	text-decoration: none;
+	text-align: center;
+	margin: 2em;
+	margin-bottom: 0;
+	display: inline-block;
+	font-weight: bold;
+	font-size: 20px;
+	color: white;
+}
+
+a:hover {
+    color: #0DFFF8;
+}
+
+/*a:visited {
+    color: #99FF33;
+}*/
+
+a:active {
+    color: #410CE8;
+}
+
+
+/*welcome page styling*/
+.welcome {
+	text-align: center;
+	background-color: rgba(89, 87, 89, 0.4);
+}
+
+/*newsfeed styling*/
+.gossip {
+	width: 100%;
+	margin: 30px;
+	padding: 10px;
+}
+
+.postcontainer {
+	float: left;
+	width: 350px;
+	height: 350px;
+	margin-left: 50px;
+	margin-top: 60px;
+	background-color: rgba(89, 87, 89, 0.4);
+}
+
+.postimage {
+	width: 100%;
+	height: 50%;
+}
+
+.postimage img {
+	width: 100%;
+	height: 100%;
+}
+
+.posttext {
+	width: 100%;
+	height: 50%;
+}
+
+#title {
+	text-align: left;
+	font-style: italic;
+	font-size: 20px;
+	padding: 15px; 
+	margin: 0;
+}
+
+#body {
+	width: 85%;
+	margin: 0 auto;
+	font-size: 16px;
+	padding: 5px;
+	border: 1px solid gray;
+}
+
+.allgroupies a {
+	text-decoration: none;
+	color: white;
+}
+
+.allgroupies a:hover {
+    color: #0DFFF8;
+}
+
+.allgroupies a:active {
+    color: #410CE8;
+}
+
+.allgroupies {
+	width: 100%
+}
+
+.onegroupie {
+	float:left;
+	width: 45%;
+	margin: 20px;
+	margin-left: 25%;
+	border:1px solid white;
+	padding: 15px;
+	text-align: center;
+}
+
+.groupiephoto {
+	float: left;
+	width: 30%;
+	margin: 20px
+}
+
+.groupiephoto img {
+	width: 100px;
+	height: 100px;
+}
+
+.groupieinfo {
+	float: left;
+	width: 60%;
+}
+
+/*User Profile Styling*/
+
+.main {
+	float: left;
+	width: 60%;
+	margin: 45px;
+}
+
+.main h1 {
+	text-align: center;
+}
+
+.left {
+	float: left;
+	width: 30%;
+	margin: 20px;	
+}
+
+.aboutme {
+	width: 100%;
+	margin: 20px;
+	padding: 20px;
+	background-color: rgba(89, 87, 89, 0.4);
+}
+
+.aboutme
+
+.left ol, .left li{
+	width: 70%;
+	font-family: 'Exo', sans-serif;
+	color: white;
+	font-size: 20px;
+}
+
+.new_entry {
+	width: 100%;
+	margin: 20px;
+	padding: 20px;
+	background-color: rgba(89, 87, 89, 0.4);
+}
+
+.greeting {
+	width: 100%;
+	margin: 20px;
+	text-align: center;
+}
+
+.myposts {
+	float: left;
+	width: 100%;
+	margin: 20px;
+	padding: 20px;
+	background-color: rgba(89, 87, 89, 0.4);
+}
+
+.mypostimage {
+	float: left;
+	width: 40%;
+	margin: 20px;
+}
+
+.myposttext {
+	float: left;
+	width: 40%;
+	margin: 20px;
+}
+
+.mypostimage img {
+	width: 300px;
+	height: 300px;
+}
+
+.friends {
+	width: 100%;
+	margin: 20px;
+	padding: 20px;
+	background-color: rgba(89, 87, 89, 0.4);
+}
+
+.friends a, .aboutme a {
+	text-decoration: none;
+	color: white;
+}
+
+.friends a:hover, .aboutme a:hover {
+  color: #0DFFF8;
+}
+
+.friends a:active, .aboutme a:active {
+  color: #410CE8;
+}
+
+#editaccount a {
+	color: black;
+	font-weight: bold;
+	font-size: 16px;
+	font-family: 'Exo', sans-serif;
+}
+
+/*Edit Account Styling*/
+.editdetails h1, .deleteaccount h1 {
+	text-align: center
+}
+
+.editdetails, .deleteaccount {
+	float: left;
+	width: 550px;
+	height: 500px;
+	margin: 40px;
+	
+	padding: 20px;
+	background-color: rgba(89, 87, 89, 0.4);
+}
+
+.editdetails {
+	margin-left: 80px;
+}
+
+.deleteaccount form {
+	text-align: center;
+}
+
+input[type="submit"]{
+  height:25px;
+	font-size: 16px;
+	border-radius: 5px;
+	font-family: 'Exo', sans-serif;
+}
+
+.goodbye img {
+	width: 100%;
+	margin:0 auto;
+}
+
+.goodbye h1:hover {
+	color: #FF0000;
+}

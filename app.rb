@@ -16,7 +16,12 @@ def current_user
 	end
 end
 
-get	'/' do 
+get '/' do
+	erb :welcome
+end	
+
+get	'/gossip' do 
+	# @user = User.find(params[:id]).username
 	@posts = Post.last(10).reverse
 	erb :newsfeed
 end
@@ -24,6 +29,7 @@ end
 get '/fellowgroupie/:id' do
 	begin
 		@user = User.find(params[:id])
+		@posts = @user.posts.reverse
 		erb :fellowgroupie
 	rescue
 		flash[:notice] = "That user does not exist."
@@ -42,12 +48,13 @@ get'/othergroupies/:id' do
 		erb :othergroupies
 	rescue
 		flash[:notice] = "That user does not exist."
-		redirect to '/'
+		redirect to '/othergroupies'
 	end
 end
 
 get '/profile' do
-	@posts = current_user.posts
+	@user = current_user
+	@posts = current_user.posts.reverse
 	erb :profile
 end
 
@@ -58,7 +65,7 @@ end
 get '/logout' do
 	session[:user_id] = nil
 	flash[:notice] = "Logged out!"
-	redirect to '/login'
+	redirect to '/'
 end
 
 get '/signup' do
@@ -84,16 +91,16 @@ end
 get '/follow/:id' do
 	@relationship = Relationship.create(follower_id: current_user.id, 
 																			followed_id: params[:id])
-	flash[:notice] = "Followed!"
-	redirect to '/profile'
+	redirect to '/othergroupies'
+	flash[:notice] = "Followed!"	
 end
 
 get '/unfollow/:id' do
 	@relationship = Relationship.find_by(follower_id: current_user.id,
-											 followed_id: params[:id])
+											 								followed_id: params[:id])
 	@relationship.destroy
+	redirect to '/othergroupies'
 	flash[:notice] = "Unfollowed!"
-	redirect to '/profile'
 end
 
 post '/delete' do
@@ -102,6 +109,8 @@ post '/delete' do
 end
 
 get '/finethen' do
+	session[:user_id] = nil
+	flash[:notice] = "Account Deleted and Added To Our Blacklist"
 	erb :finethen
 end
 
@@ -129,8 +138,14 @@ post '/newpost' do
 	post = Post.new(params[:post])
 	post.user_id = current_user.id
 	post.save
-
+ #  @filename = params[:file][:filename]
+ #  file = params[:file][:tempfile]
+ #  File.open("./public/#{@filename}", 'wb') do |f|
+ #    f.write(file.read)
+ #  end
+ #  flash[:notice] = "Successfully uploaded!"
 	p post
-	redirect to '/profile'
+	redirect to '/gossip'
 end
+
 

@@ -1,12 +1,31 @@
 <h1>Meet Other Groupies</h1>
-<% @users.each do |user| %>
-	<p><a href="/fellowgroupie/<%= user.id %>"><%= user.username %></a> 
-	<% if current_user and current_user != user %>
-		<% if current_user and !current_user.following.include?(user) %>
-			(<a href="/follow/<%= user.id %>">Follow</a>)
-		<% else %>
-			(<a href="/unfollow/<%= user.id %>">Unfollow</a>)
-		<% end %>
+<div class="allgroupies">
+	<% @users.each do |user| %>
+
+		<div class="onegroupie">
+			<div class="groupiephoto">
+				<img src="http://socialmediapearls.com/wp-content/uploads/2014/11/ig-no-profile-pic.jpg">
+			</div>
+
+			<div class="groupieinfo">
+				<p>
+					<%= user.fname %>  <%= user.lname %>
+				</p>
+
+				<p>
+					<a href="/fellowgroupie/<%= user.id %>">@<%= user.username %></a> 
+				</p>
+
+				<p>
+					<% if current_user and current_user != user %>
+						<% if current_user and !current_user.following.include?(user) %>
+							(<a href="/follow/<%= user.id %>">Follow</a>)
+						<% else %>
+							(<a href="/unfollow/<%= user.id %>">Unfollow</a>)
+						<% end %>
+					<% end %>
+				</p>
+			</div>
+		</div>	
 	<% end %>
-	</p>
-<% end %>
+</div>
