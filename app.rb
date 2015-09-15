@@ -4,10 +4,11 @@ require 'bundler/setup'
 require 'rack-flash'
 require './models'
 
+configure(:development){set :database, "sqlite3:blog.sqlite3"}
 set :database, "sqlite3:groupies.sqlite3"
 set :sessions, :true
 use Rack::Flash, sweep: true
-configure(:development){set :database, "sqlite3:blog.sqlite3"}
+
 
 def current_user
 	if session[:user_id]
