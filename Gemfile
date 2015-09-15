@@ -5,6 +5,7 @@ gem 'sinatra'
 gem 'sinatra-activerecord'
 gem 'rake'
 gem 'rack-flash3'
+gem 'sqlite3'
 # gem 'paperclip', '~> 4.3.1'
 
 group :development do
