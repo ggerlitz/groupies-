@@ -53,6 +53,20 @@ a:active {
 	background-color: rgba(89, 87, 89, 0.4);
 }
 
+.signup, .login {
+	width: 400px;
+	margin: 0 auto;
+	margin-top: 100px;
+	padding: 20px;
+	background-color: rgba(89, 87, 89, 0.4);
+	text-align: center;
+}
+
+.signup form input, .login form input{
+	width: 400px;
+	height: 50px;
+}
+
 /*newsfeed styling*/
 .gossip {
 	width: 100%;
