@@ -87,7 +87,7 @@ post '/editaccount' do
 	@user = current_user
 	current_user.update(params[:user])
 	flash[:notice] = "Profile was successfully updated."
-	redirect to '/account'
+	redirect to '/profile'
 end
 
 get '/follow/:id' do

@@ -13,9 +13,9 @@ h1, h2, nav {
 	color: white;
 }
 
-h1:hover {
+/*h1:hover {
 	font-size: 55px;
-}
+}*/
 
 p {
 	font-family: 'Exo', sans-serif;
@@ -294,3 +294,4 @@ input[type="submit"]{
 .goodbye h1:hover {
 	color: #FF0000;
 }
+
